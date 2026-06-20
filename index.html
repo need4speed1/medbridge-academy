@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Permissions-Policy" content="microphone=*" />
+  <title>MedBridge Academy — Your Healthcare Career Starts Here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #0F6E56;
+      --teal-dark:   #0a5040;
+      --teal-light:  #E1F5EE;
+      --teal-mid:    #1D9E75;
+      --navy:        #1B2A4A;
+      --gold:        #C9A84C;
+      --white:       #ffffff;
+      --gray-50:     #f8f9fa;
+      --gray-100:    #f0f2f5;
+      --gray-300:    #ced4da;
+      --gray-500:    #6c757d;
+      --gray-700:    #3d4451;
+      --font-display: 'Sora', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --radius:       10px;
+      --shadow:       0 4px 24px rgba(15,110,86,0.10);
+      --shadow-lg:    0 8px 40px rgba(15,110,86,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .nav-logo-icon svg { width: 20px; height: 20px; fill: white; }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--navy);
+    }
+
+    .nav-logo-text span { color: var(--teal); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-cta {
+      background: var(--teal);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--teal-dark) !important; color: white !important; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+    .section-alt { background: var(--gray-50); }
+
+    .section-label {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.25; }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 16px; }
+    h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+
+    .section-intro { max-width: 560px; color: var(--gray-500); font-size: 1.05rem; margin-bottom: 48px; }
+
+    /* ── HERO ── */
+    #home {
+      min-height: calc(100vh - 68px);
+      background: linear-gradient(135deg, var(--navy) 0%, #243860 60%, #1a5c6b 100%);
+      display: flex; align-items: center;
+      padding: 80px 5%;
+      position: relative; overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.8rem; font-weight: 500;
+      padding: 6px 16px; border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--teal-mid);
+      border-radius: 50%;
+    }
+
+    #home h1 { color: white; margin-bottom: 20px; }
+    #home h1 span { color: var(--teal-mid); }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem; margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--teal-mid);
+      color: white; border: none;
+      padding: 14px 28px; border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+
+    .btn-primary:hover { background: var(--teal); transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: white; border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 14px 28px; border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-flex; align-items: center;
+    }
+
+    .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 52px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      flex-wrap: wrap;
+    }
+
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: 1.8rem; font-weight: 700;
+      color: white;
+    }
+
+    .stat-label {
+      font-size: 0.82rem; color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+
+    /* ── PROGRAMS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--gray-100);
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      background: var(--teal-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card-icon svg { width: 26px; height: 26px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+
+    .card-tag {
+      display: inline-block;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p { color: var(--gray-500); font-size: 0.92rem; margin-bottom: 20px; }
+
+    .card-features { list-style: none; margin-bottom: 24px; }
+
+    .card-features li {
+      font-size: 0.88rem; color: var(--gray-700);
+      padding: 5px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .card-features li::before {
+      content: '✓';
+      color: var(--teal); font-weight: 700; font-size: 0.85rem;
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: white; border: none;
+      padding: 11px 22px; border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.88rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-teal:hover { background: var(--teal-dark); }
+
+    /* ── ENROLLMENT STEPS ── */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+
+    .step {
+      text-align: center; padding: 32px 24px;
+      background: white; border-radius: 14px;
+      border: 1px solid var(--gray-100);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .step-num {
+      width: 48px; height: 48px;
+      background: var(--teal);
+      color: white;
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 1.1rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .step h3 { font-size: 1rem; margin-bottom: 8px; }
+    .step p { font-size: 0.88rem; color: var(--gray-500); }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 760px; }
+
+    details {
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      background: white;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 20px 24px;
+      font-weight: 600; font-size: 0.95rem;
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      list-style: none;
+      color: var(--navy);
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.3rem; color: var(--teal);
+      font-weight: 300; transition: transform 0.2s;
+    }
+
+    details[open] summary::after { content: '−'; }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--gray-500); font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px; align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 12px; }
+    .contact-info p { color: var(--gray-500); margin-bottom: 32px; }
+
+    .contact-detail {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail-icon {
+      width: 40px; height: 40px;
+      background: var(--teal-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--teal); fill: none; stroke-width: 1.8; }
+
+    .contact-detail-text strong { display: block; font-size: 0.85rem; color: var(--navy); }
+    .contact-detail-text span { font-size: 0.85rem; color: var(--gray-500); }
+
+    .contact-form { background: white; border-radius: 14px; padding: 36px; box-shadow: var(--shadow); border: 1px solid var(--gray-100); }
+
+    .form-group { margin-bottom: 18px; }
+
+    label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-family: var(--font-body); font-size: 0.9rem;
+      color: var(--navy);
+      background: var(--gray-50);
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--teal);
+      background: white;
+    }
+
+    textarea { resize: vertical; min-height: 110px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--teal);
+      color: white; border: none;
+      padding: 13px; border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem; font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: var(--teal-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 5% 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700;
+      color: white; margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--teal-mid); }
+
+    footer p { font-size: 0.85rem; margin-bottom: 4px; }
+
+    .footer-links {
+      display: flex; gap: 24px; justify-content: center;
+      list-style: none; margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal-mid); }
+
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 24px 0; }
+
+    /* ── VOICE AGENT ── */
+    .voice-widget {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="nav-logo-text">MedBridge <span>Academy</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#enrollment">Enrollment</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Apply Now</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-badge">Accredited Programs · Financial Aid Available</div>
+    <h1>Your Healthcare<br><span>Career Starts Here</span></h1>
+    <p class="hero-sub">Accelerated 9-month programs in Medical and Dental Assisting. Hands-on training, certification prep, and real-world externships to launch your career.</p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Explore Programs
+      </a>
+      <a href="#contact" class="btn-outline">Request Info</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-val">9 Mo</div>
+        <div class="stat-label">Program Duration</div>
+      </div>
+      <div>
+        <div class="stat-val">160 Hr</div>
+        <div class="stat-label">Externship</div>
+      </div>
+      <div>
+        <div class="stat-val">2</div>
+        <div class="stat-label">Programs Offered</div>
+      </div>
+      <div>
+        <div class="stat-val">100%</div>
+        <div class="stat-label">Cert Prep Included</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS ── -->
+<section id="programs">
+  <span class="section-label">Our Programs</span>
+  <h2>Choose Your Healthcare Path</h2>
+  <p class="section-intro">Both programs are designed for working adults — flexible schedules, expert instructors, and career support from day one.</p>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <span class="card-tag">9 Months</span>
+      <h3>Medical Assistant</h3>
+      <p>Train to become a certified clinical medical assistant. Master patient care, EHR systems, phlebotomy, and clinical procedures.</p>
+      <ul class="card-features">
+        <li>Clinical and administrative training</li>
+        <li>EHR and phlebotomy included</li>
+        <li>NHA CCMA exam preparation</li>
+        <li>160-hour externship placement</li>
+        <li>Morning and evening cohorts</li>
+      </ul>
+      <a href="#enrollment" class="btn-teal">Enroll Now</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+      <span class="card-tag">9 Months</span>
+      <h3>Dental Assistant</h3>
+      <p>Learn chairside assisting, dental radiography, infection control, and patient management in a hands-on environment.</p>
+      <ul class="card-features">
+        <li>Chairside and radiography training</li>
+        <li>Infection control certification</li>
+        <li>DANB CDA exam preparation</li>
+        <li>160-hour dental office externship</li>
+        <li>Morning and evening cohorts</li>
+      </ul>
+      <a href="#enrollment" class="btn-teal">Enroll Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENROLLMENT ── -->
+<section id="enrollment" class="section-alt">
+  <span class="section-label">How to Enroll</span>
+  <h2>Start in 4 Simple Steps</h2>
+  <p class="section-intro">Our admissions process is straightforward. Most students complete it in under a week.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Submit Application</h3>
+      <p>Complete your application online or in person. You'll need a valid ID and high school diploma or GED.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Financial Aid Review</h3>
+      <p>Our team helps you complete FAFSA and explore payment plan options. Federal aid accepted.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Attend Orientation</h3>
+      <p>Meet your instructors, tour the facilities, and sign your enrollment agreement. Orientation is mandatory.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Start Classes</h3>
+      <p>Begin your program in a morning or evening cohort. Your healthcare career journey starts here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <span class="section-label">FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <p class="section-intro">Have more questions? Our AI student assistant is available 24/7 — just click the button in the bottom right.</p>
+  <div class="faq-list">
+    <details>
+      <summary>How do I enroll at MedBridge Academy?</summary>
+      <div class="faq-answer">You can enroll online or visit us in person. You'll need to submit a completed application, a valid government-issued ID, and a high school diploma or GED. Once reviewed, you'll be invited to attend a mandatory orientation before signing your enrollment agreement.</div>
+    </details>
+    <details>
+      <summary>What is the refund policy?</summary>
+      <div class="faq-answer">Students who withdraw within 3 days of signing their enrollment agreement receive a full refund. Withdrawals after 3 days but before the program start date are subject to a $150 administrative fee. No refund is issued after the program begins unless special circumstances are reviewed and approved by administration.</div>
+    </details>
+    <details>
+      <summary>What is the cancellation policy?</summary>
+      <div class="faq-answer">Students may cancel enrollment by submitting a written cancellation request. Cancellations made after attending orientation will forfeit the registration fee. Please contact our admissions office as early as possible if you need to cancel.</div>
+    </details>
+    <details>
+      <summary>How long are the programs?</summary>
+      <div class="faq-answer">Both the Medical Assistant and Dental Assistant programs are 9 months long, including a 160-hour externship in the final month at a partnered clinic or dental office.</div>
+    </details>
+    <details>
+      <summary>What are the class schedule options?</summary>
+      <div class="faq-answer">Classes run Monday through Friday. We offer morning cohorts starting at 8:00 AM and evening cohorts starting at 5:00 PM, depending on availability at your campus location.</div>
+    </details>
+    <details>
+      <summary>What certification exams will I be prepared for?</summary>
+      <div class="faq-answer">Medical Assistant graduates are prepared to sit for the NHA Certified Clinical Medical Assistant (CCMA) exam. Dental Assistant graduates are prepared for the DANB Certified Dental Assistant (CDA) exam. Exam prep is included in your program curriculum.</div>
+    </details>
+    <details>
+      <summary>Is financial aid available?</summary>
+      <div class="faq-answer">Yes. MedBridge Academy accepts federal financial aid through FAFSA. Flexible payment plans are also available. Our financial aid advisors will work with you to find the best option for your situation.</div>
+    </details>
+    <details>
+      <summary>How does the externship work?</summary>
+      <div class="faq-answer">All students complete a 160-hour externship at a partnered clinic or dental office during their final month. MedBridge Academy coordinates placement on your behalf, so you don't need to find your own site.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact" class="section-alt">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <span class="section-label">Contact Us</span>
+      <h2>We're Here to Help</h2>
+      <p>Have questions about enrollment, programs, or financial aid? Reach out and our team will get back to you within 1 business day.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.09a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Phone</strong>
+          <span>1-800-MEDBRIDGE</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <span>admissions@medbridgeacademy.edu</span>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Office Hours</strong>
+          <span>Monday – Friday, 8:00 AM – 6:00 PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3 style="margin-bottom:24px;">Send Us a Message</h3>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(555) 000-0000" />
+      </div>
+      <div class="form-group">
+        <label>Program of Interest</label>
+        <select>
+          <option value="">Select a program</option>
+          <option>Medical Assistant</option>
+          <option>Dental Assistant</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us how we can help you..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="alert('Thank you! Our team will contact you within 1 business day.')">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">MedBridge <span>Academy</span></div>
+  <p>Your Healthcare Career Starts Here</p>
+  <ul class="footer-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#enrollment">Enrollment</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <hr class="footer-divider" />
+  <p>© 2026 MedBridge Academy. Fictional institution created for AI certification project purposes only.</p>
+</footer>
+
+<!-- ── ELEVENLABS VOICE AGENT ── -->
+<div class="voice-widget" allow="microphone">
+  <elevenlabs-convai agent-id="agent_0501ktakznq1fr38y8136dkk3qe2"></elevenlabs-convai>
+</div>
+<script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+
+</body>
+</html>
